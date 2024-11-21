@@ -31,7 +31,7 @@ function initHeader() {
             // opciones.classList.add('show');
             opciones.style.top = `${menuToggle.getBoundingClientRect().bottom}px`;
         }
-        
+
 
         // Toggle mobile menu visibility
         menuToggle.addEventListener('click', function (e) {
@@ -60,7 +60,7 @@ function initHeader() {
                 dropdownToggle.removeEventListener('mouseover', showDropdown);
                 dropdownToggle.removeEventListener('mouseleave', hideDropdown);
                 dropdown.removeEventListener('mouseleave', hideDropdown);
-            
+
                 dropdownToggle.addEventListener('mouseover', showDropdown);
                 dropdownToggle.addEventListener('mouseleave', function () {
                     setTimeout(() => {
@@ -69,7 +69,7 @@ function initHeader() {
                         }
                     }, 200);
                 });
-            
+
                 dropdown.addEventListener('mouseover', showDropdown);
                 dropdown.addEventListener('mouseleave', function () {
                     setTimeout(() => {
@@ -79,7 +79,7 @@ function initHeader() {
                     }, 200);
                 });
             }
-            
+
 
 
         };
@@ -105,3 +105,4 @@ function initHeader() {
         });
     }
 }
+
