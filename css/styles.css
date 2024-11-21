@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f9f9f9; /* Light gray for a neutral background */
+    background-color: #1a1a1a; /* Dark background to prevent white flash during animation */
     color: #333; /* Dark gray for text */
     overflow-x: hidden; /* Prevent horizontal scroll on small devices */
 }
 
 h1, h2 {
     font-family: 'Playfair Display', serif; /* Headings use Playfair Display */
-    color: #1a1a1a; /* Darker shade for headers */
+    color: #f5f5f5; /* Light text for better contrast on dark background */
     margin: 0;
 }
 
@@ -36,12 +36,15 @@ a:hover {
 .hero {
     background: #1a1a1a; /* Dark background */
     color: #f5f5f5; /* Light text */
-    padding: 60px 20px;
+    padding: 200px;
     text-align: center;
-    background-image: url('assets/hero-background.jpg'); /* Optional background image */
+    background-image: url('../assets/img/background-hero.jpg'); /* Optional background image */
+    background-size: contain;
     background-size: cover;
     background-position: center;
     text-align: left;
+    animation: fadeIn 1s ease-in-out;
+
 }
 
 .hero h1 {
@@ -67,6 +70,8 @@ a:hover {
     background-size: cover;
     background-position: center;
     text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 .contacto h1 {
@@ -82,17 +87,16 @@ a:hover {
     margin-left: 55px;
 }
 
-
-
 /* General form container styling */
 .contact-form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
+    background-color: #333; /* Dark background to prevent white flash */
     border: 1px solid #ddd; /* Subtle border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Form labels */
@@ -101,7 +105,7 @@ a:hover {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #333;
+    color: #f5f5f5; /* Light text for better contrast */
     font-family: 'Roboto', sans-serif; /* Use Roboto for labels */
 }
 
@@ -116,7 +120,7 @@ a:hover {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif; /* Use Roboto for inputs */
     color: #333;
-    background-color: #fff;
+    background-color: #f5f5f5; /* Light background for inputs */
     box-sizing: border-box; /* Ensure padding is included in width */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -141,6 +145,7 @@ a:hover {
     border-radius: 4px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Button hover effect */
@@ -158,10 +163,11 @@ a:hover {
     border-radius: 4px; /* Rounded corners */
     font-size: 1rem; /* Match font size of other inputs */
     font-family: 'Roboto', sans-serif; /* Use Roboto for dropdown */
-    background-color: #fff; /* White background */
+    background-color: #f5f5f5; /* Light background */
     color: #333; /* Text color */
     appearance: none; /* Remove default dropdown arrow for custom styles */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Focused state for the dropdown */
@@ -181,13 +187,13 @@ a:hover {
     border-color: #0056b3; /* Darker blue on hover */
 }
 
-
 /* Footer */
 .footer {
     background: #1a1a1a; /* Dark footer */
     color: #f5f5f5; /* Light text */
     padding: 20px 0;
     font-size: 0.9rem;
+    animation: fadeIn 1.8s ease-in-out;
 }
 
 /* Footer styling */
@@ -211,6 +217,7 @@ a:hover {
     justify-content: space-between; /* Space between columns */
     align-items: flex-start; /* Align columns to the top */
     margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .footer img {
@@ -225,7 +232,7 @@ a:hover {
     text-align: left; /* Align text to the left */
     flex: 1; /* Allow the column to grow */
     margin-top: 50px;  
-
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 #primeraColumna img {
@@ -236,7 +243,6 @@ a:hover {
     margin-right: 10px;
     color: #007bff; /* Blue color for the icon */
 }
-
 
 #primeraColumna p {
     margin: 5px 0; /* Space between items */
@@ -259,7 +265,7 @@ a:hover {
     flex: 1; 
     text-align: right; /* Align text to the right */
     margin-top: 50px;
-
+    animation: fadeIn 2.5s ease-in-out;
 }
 
 .footer-nav {
@@ -287,9 +293,6 @@ a:hover {
     color: #007bff; /* Blue color for the icon */
 }
 
-
-
-
 /* Map container styling */
 #map-container {
     max-width: 100%; /* Make it responsive */
@@ -298,6 +301,7 @@ a:hover {
     border-radius: 8px; /* Rounded corners for a modern look */
     overflow: hidden; /* Ensure corners are properly clipped */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Make iframe fit square container */
@@ -306,7 +310,6 @@ a:hover {
     height: 100%;
     border: none; /* Remove default iframe border */
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -352,5 +355,16 @@ a:hover {
 
     .about h2, .contact h2 {
         font-size: 1.8rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
