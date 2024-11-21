@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Load the header dynamically
     fetch('../html/header.html')
         .then(response => {
             if (!response.ok) {
@@ -23,10 +22,21 @@ function initHeader() {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdown = document.querySelector('.dropdown');
 
+    // Hamburger Menu
     if (menuToggle && opciones) {
+        // Start with the menu hidden
+        if (opciones.classList.contains('show')) {
+            opciones.classList.remove('show');
+        } else {
+            // opciones.classList.add('show');
+            opciones.style.top = `${menuToggle.getBoundingClientRect().bottom}px`;
+        }
+        
+
         // Toggle mobile menu visibility
-        menuToggle.addEventListener('click', function () {
-            opciones.classList.toggle('show');
+        menuToggle.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent clicks from propagating
+            opciones.classList.toggle('show'); // Toggle visibility
         });
 
         // Close menu when clicking outside
@@ -37,33 +47,61 @@ function initHeader() {
         });
     }
 
+    // Dropdown Menu
     if (dropdownToggle && dropdown) {
-        // Toggle dropdown menu visibility on mouseover
-        dropdownToggle.addEventListener('mouseover', function (e) {
+        const handleDropdownToggle = () => {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+            if (isMobile) {
+                // Mobile behavior: Click to toggle
+                dropdownToggle.removeEventListener('click', toggleDropdown);
+                dropdownToggle.addEventListener('click', toggleDropdown);
+            } else {
+                dropdownToggle.removeEventListener('mouseover', showDropdown);
+                dropdownToggle.removeEventListener('mouseleave', hideDropdown);
+                dropdown.removeEventListener('mouseleave', hideDropdown);
+            
+                dropdownToggle.addEventListener('mouseover', showDropdown);
+                dropdownToggle.addEventListener('mouseleave', function () {
+                    setTimeout(() => {
+                        if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
+                            hideDropdown();
+                        }
+                    }, 200);
+                });
+            
+                dropdown.addEventListener('mouseover', showDropdown);
+                dropdown.addEventListener('mouseleave', function () {
+                    setTimeout(() => {
+                        if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
+                            hideDropdown();
+                        }
+                    }, 200);
+                });
+            }
+            
+
+
+        };
+
+        const toggleDropdown = (e) => {
             e.stopPropagation();
-            dropdown.classList.add('show');
-        });
+            dropdown.classList.toggle('show');
+        };
 
-        // Keep dropdown open when interacting with its contents
-        dropdown.addEventListener('mouseover', function () {
-            dropdown.classList.add('show');
-        });
+        const showDropdown = () => dropdown.classList.add('show');
+        const hideDropdown = () => dropdown.classList.remove('show');
 
-        // Close dropdown menu when mouse leaves both the toggle button and dropdown
-        dropdownToggle.addEventListener('mouseleave', function () {
-            setTimeout(() => {
-                if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
-                    dropdown.classList.remove('show');
-                }
-            }, 200);
-        });
+        handleDropdownToggle();
 
-        dropdown.addEventListener('mouseleave', function () {
-            setTimeout(() => {
-                if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
-                    dropdown.classList.remove('show');
-                }
-            }, 200);
+        // Adjust behavior on window resize
+        window.addEventListener('resize', handleDropdownToggle);
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && !dropdownToggle.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
         });
     }
 }
