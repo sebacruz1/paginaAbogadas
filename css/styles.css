@@ -204,9 +204,9 @@ a:hover {
 }
 
 .footer .container {
-    width: 100%;           /* Set width to fill the container, but adjust with padding or margins */
+    width: 100%;           
     max-width: 1200px;
-    padding-left: 20px;    /* Add padding to create some space to the left */
+    padding-left: 2px;    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -216,7 +216,7 @@ a:hover {
 
 
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     font-size: 24px;
     background: none;
     border: none;
@@ -240,13 +240,35 @@ a:hover {
     font-weight: bold;
     text-decoration: none;
 
-    
-    
 }
 
 
 .footer i {
     padding: 5px;
+}
+
+#primeraColumna{
+    margin-top: 50px;
+}
+
+#segundaColumna { 
+    margin-top: 80px;
+}
+
+#map-container {
+    width: 100%; /* Set container width to fill its parent */
+    max-width: 800px; /* Optional: Limit maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    border: 2px solid #ccc; /* Add a border around the map */
+    border-radius: 10px; /* Round the corners */
+    overflow: hidden; /* Prevent the iframe from overflowing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#map-container iframe {
+    width: 100%; /* Make the iframe take up the full width */
+    height: 400px; /* Set a default height */
+    border: none; /* Remove the iframe border */
 }
 
 
