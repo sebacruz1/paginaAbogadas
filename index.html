@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descubre más sobre nosotros, nuestros servicios y cómo contactarnos.">
     <title>Inicio - Nuestra Empresa</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Main styles -->
-    <link rel="stylesheet" href="css/header.css"> <!-- Header-specific styles -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
 </head>
 
 <body>
-    <a href="https://wa.me/+56994538399" target="_blank" class="whatsapp-button">
-        <img src="assets/img/wsp.svg" alt="WhatsApp Logo">
-    </a>
-
     <main>
         <section class="hero">
+            <div id="slideshow-container">
+                <img src="assets/img/aaa.png" class="slide active" alt="Slide 1">
+                <img src="assets/img/img2.jpg" class="slide" alt="Slide 2">
+                <img src="assets/img/img3.jpg" class="slide" alt="Slide 3">
+              </div>
+            </div>
+
+            <!-- Hero Content -->
             <div class="hero-wrapper">
                 <div class="hero-content">
                     <div class="container">
@@ -33,6 +33,26 @@
             </div>
         </section>
 
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div id="primeraColumna">
+                    <h2>Contáctanos</h2>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:hola@ejemplo.cl">hola@ejemplo.cl</a></p>
+                    <p><i class="fa fa-map-marker"></i> Calle Ejemplo 123, Ciudad</p>
+                    <p><i class="fa fa-clock"></i> Lunes a Viernes, 9:00 - 18:00</p>
+                </div>
+
+                <div id="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.9460790736603!2d-71.52858002447445!3d-32.97882437351417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689ddaac4ac68db%3A0x80114b08a36d0111!2sAv.%20Jardines%20de%20Re%C3%B1aca%20102%2C%202542587%20Renaca%2C%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1sen!2scl!4v1732150260213!5m2!1sen!2scl"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Contact Section -->
         <section class="contacto">
             <div class="container">
                 <h1>Contáctanos</h1>
@@ -58,47 +78,10 @@
                 </form>
             </div>
         </section>
+    </main>
 
-
-        <!-- Footer -->
-        <footer class="footer">
-
-
-            <img src="@todo" alt="Logo de la Empresa">
-            <div class="container">
-
-                <div id="primeraColumna">
-                    <h2>Contáctanos</h2>
-                    <p><i class="fa fa-phone"></i> +56912345678</p>
-                    <p><i class="fa fa-phone"></i> +56912345678</p>
-                    <p><i class="fa fa-envelope"></i><a href="mailto:hola@ejemplo.cl"> hola@ejemplo.cl</a></p>
-                    <p><i class="fa fa-map-marker"></i> Calle Ejemplo 123, Ciudad</p>
-                    <p> <i class="fa fa-clock"></i> Lunes a Viernes, 9:00 - 18:00</p>
-                </div>
-
-                <div id="map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.9460790736603!2d-71.52858002447445!3d-32.97882437351417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689ddaac4ac68db%3A0x80114b08a36d0111!2sAv.%20Jardines%20de%20Re%C3%B1aca%20102%2C%202542587%20Renaca%2C%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1sen!2scl!4v1732150260213!5m2!1sen!2scl"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-
-
-                <div id="segundaColumna">
-                    <nav class="footer-nav">
-                        <li> <a href="#inicio">Inicio</a></li>
-                        <li><a href="#quienes">Quienes Somos</a></li>
-                        <li><a href="#areas">Áreas de Trabajo</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </nav>
-                </div>
-            </div>
-        </footer>
-
-
-
-        <script src="js/main.js"></script>
-
+    <script src="js/header.js"></script>
+    <script src="js/slideshow.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Load the header dynamically
     fetch('../html/header.html')
         .then(response => {
             if (!response.ok) {
@@ -14,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
             initHeader();
         })
         .catch(error => console.error('Error:', error));
+
+    // Initialize slideshow
+    initSlideshow();
 });
 
 function initHeader() {
@@ -24,18 +28,8 @@ function initHeader() {
 
     // Hamburger Menu
     if (menuToggle && opciones) {
-        // Start with the menu hidden
-        if (opciones.classList.contains('show')) {
-            opciones.classList.remove('show');
-        } else {
-            // opciones.classList.add('show');
-            opciones.style.top = `${menuToggle.getBoundingClientRect().bottom}px`;
-        }
-
-
-        // Toggle mobile menu visibility
         menuToggle.addEventListener('click', function (e) {
-            e.stopPropagation(); // Prevent clicks from propagating
+            e.stopPropagation(); // Prevent event bubbling
             opciones.classList.toggle('show'); // Toggle visibility
         });
 
@@ -47,62 +41,40 @@ function initHeader() {
         });
     }
 
-    // Dropdown Menu
     if (dropdownToggle && dropdown) {
-        const handleDropdownToggle = () => {
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-            if (isMobile) {
-                // Mobile behavior: Click to toggle
-                dropdownToggle.removeEventListener('click', toggleDropdown);
-                dropdownToggle.addEventListener('click', toggleDropdown);
-            } else {
-                dropdownToggle.removeEventListener('mouseover', showDropdown);
-                dropdownToggle.removeEventListener('mouseleave', hideDropdown);
-                dropdown.removeEventListener('mouseleave', hideDropdown);
-
-                dropdownToggle.addEventListener('mouseover', showDropdown);
-                dropdownToggle.addEventListener('mouseleave', function () {
-                    setTimeout(() => {
-                        if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
-                            hideDropdown();
-                        }
-                    }, 200);
-                });
-
-                dropdown.addEventListener('mouseover', showDropdown);
-                dropdown.addEventListener('mouseleave', function () {
-                    setTimeout(() => {
-                        if (!dropdown.matches(':hover') && !dropdownToggle.matches(':hover')) {
-                            hideDropdown();
-                        }
-                    }, 200);
-                });
-            }
-
-
-
-        };
-
         const toggleDropdown = (e) => {
             e.stopPropagation();
             dropdown.classList.toggle('show');
         };
 
-        const showDropdown = () => dropdown.classList.add('show');
-        const hideDropdown = () => dropdown.classList.remove('show');
+        const closeDropdown = () => dropdown.classList.remove('show');
 
-        handleDropdownToggle();
+        const adjustDropdownBehavior = () => {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+            if (isMobile) {
+                dropdownToggle.addEventListener('click', toggleDropdown);
+                dropdownToggle.removeEventListener('mouseover', showDropdown);
+                dropdown.removeEventListener('mouseleave', closeDropdown);
+            } else {
+                dropdownToggle.addEventListener('mouseover', showDropdown);
+                dropdown.addEventListener('mouseleave', closeDropdown);
+                dropdownToggle.removeEventListener('click', toggleDropdown);
+            }
+        };
+
+        const showDropdown = () => dropdown.classList.add('show');
+
+        adjustDropdownBehavior();
 
         // Adjust behavior on window resize
-        window.addEventListener('resize', handleDropdownToggle);
+        window.addEventListener('resize', adjustDropdownBehavior);
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!dropdown.contains(e.target) && !dropdownToggle.contains(e.target)) {
-                dropdown.classList.remove('show');
+                closeDropdown();
             }
         });
     }
 }
-
