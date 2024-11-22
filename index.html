@@ -8,7 +8,9 @@
     <title>Inicio - Nuestra Empresa</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -19,7 +21,7 @@
                 <img src="assets/img/aaa.png" class="slide active" alt="Slide 1">
                 <img src="assets/img/img2.jpg" class="slide" alt="Slide 2">
                 <img src="assets/img/img3.jpg" class="slide" alt="Slide 3">
-              </div>
+            </div>
             </div>
 
             <!-- Hero Content -->
@@ -34,54 +36,30 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <datos class="datos">
             <div class="container">
                 <div id="primeraColumna">
                     <h2>Contáctanos</h2>
                     <p><i class="fa fa-envelope"></i> <a href="mailto:hola@ejemplo.cl">hola@ejemplo.cl</a></p>
-                    <p><i class="fa fa-map-marker"></i> Calle Ejemplo 123, Ciudad</p>
+                    <p><i class="fa fa-map-marker"></i> 7 Norte 645, Viña del Mar, Valparaíso</p>
                     <p><i class="fa fa-clock"></i> Lunes a Viernes, 9:00 - 18:00</p>
                 </div>
 
                 <div id="map-container">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.9460790736603!2d-71.52858002447445!3d-32.97882437351417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689ddaac4ac68db%3A0x80114b08a36d0111!2sAv.%20Jardines%20de%20Re%C3%B1aca%20102%2C%202542587%20Renaca%2C%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1sen!2scl!4v1732150260213!5m2!1sen!2scl"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13382.129659886414!2d-71.5511363!3d-33.016101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dde70710cce5%3A0x3e4b1a37c4d5f6f6!2sEglus!5e0!3m2!1sen!2scl!4v1732236833479!5m2!1sen!2scl"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </footer>
+        </datos>
 
-        <!-- Contact Section -->
-        <section class="contacto">
-            <div class="container">
-                <h1>Contáctanos</h1>
-                <p>Envíanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
-                <form action="enviar.js" method="post" class="contact-form">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
-
-                    <label for="numero">Número de teléfono:</label>
-                    <input type="text" id="numero" name="numero" placeholder="Escribe tu número de teléfono" required>
-
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
-
-                    <label for="interes">Área de interés:</label>
-                    <select name="interes" id="interes" required>
-                        <option value="asesoria">Asesoría</option>
-                        <option value="consultoria">Consultoría</option>
-                        <option value="otros">Otros</option>
-                    </select>
-
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </section>
+        
     </main>
 
     <script src="js/header.js"></script>
     <script src="js/slideshow.js"></script>
+
 </body>
 
 </html>

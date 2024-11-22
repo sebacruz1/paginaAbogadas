@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos!</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Contact Section -->
+    <section class="contacto">
+        <div class="container">
+            <h1>Contáctanos</h1>
+            <p>Envíanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+            <form action="enviar.js" method="post" class="contact-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+                <label for="numero">Número de teléfono:</label>
+                <input type="text" id="numero" name="numero" placeholder="Escribe tu número de teléfono" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
+
+                <label for="interes">Área de interés:</label>
+                <select name="interes" id="interes" required>
+                    <option value="asesoria">Asesoría</option>
+                    <option value="consultoria">Consultoría</option>
+                    <option value="otros">Otros</option>
+                </select>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/header.js"></script>
+
+    
+
+</body>
+
+</html>
