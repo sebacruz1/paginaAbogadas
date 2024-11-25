@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 </head>
 
@@ -22,16 +23,18 @@
         <div class="container">
             <h1>Contáctanos</h1>
             <p>Envíanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
-            <form action="enviar.js" method="post" class="contact-form">
+            <form id="contact-form" action="http://localhost:3000/submit" method="post" class="contact-form">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
 
                 <label for="numero">Número de teléfono:</label>
-                <input type="text" id="numero" name="numero" placeholder="Escribe tu número de teléfono" required>
+                <input type="tel" id="numero" name="numero" placeholder="Escribe tu número de teléfono" required
+                    pattern="^\+?[0-9]{7,15}$"
+                    title="Debe ser un número válido de 7 a 15 dígitos con un código de país opcional (por ejemplo, +123456789).">
+
 
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" placeholder="Escribe tu correo electrónico" required>
-
                 <label for="interes">Área de interés:</label>
                 <select name="interes" id="interes" required>
                     <option value="asesoria">Asesoría</option>
@@ -45,8 +48,11 @@
     </section>
 
     <script src="js/header.js"></script>
+    <script src="js/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
+
+
 
 </body>
 

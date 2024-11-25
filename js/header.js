@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
 
-    // Initialize slideshow
-    initSlideshow();
 });
 
 function initHeader() {
