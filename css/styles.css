@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     background-color: #1a1a1a;
     color: #f5f5f5;
     overflow-x: hidden;
+    animation: fadeInPage 1s ease-in-out; /* Page-wide fade-in effect */
 }
 
 h1,
@@ -35,6 +37,7 @@ a:hover {
     box-sizing: border-box;
 }
 
+/* Slideshow Container */
 #slideshow-container {
     position: relative;
     width: 1000px;
@@ -46,27 +49,33 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: #000;
+    opacity: 0;
+    animation: fadeInSlideshow 1.5s ease-in-out forwards;
 }
-
 
 .slide {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-    padding: 20px;
+    transform: scale(0.95);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .slide.active {
     opacity: 1;
+    transform: scale(1);
+    animation: fadeInSlide 1.5s ease-in-out;
 }
 
+/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
     height: auto;
+    opacity: 0;
+    animation: fadeInHero 2s ease-in-out forwards;
 }
 
 .hero-wrapper {
@@ -90,12 +99,16 @@ a:hover {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #ffffff;
+    opacity: 0;
+    animation: fadeInText 2.5s ease-in-out forwards;
 }
 
 .hero-content p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     color: #dcdcdc;
+    opacity: 0;
+    animation: fadeInText 2.8s ease-in-out forwards;
 }
 
 /* Footer */
@@ -104,8 +117,8 @@ a:hover {
     color: #f5f5f5;
     padding: 20px;
     font-size: 0.9rem;
-    animation: fadeIn 1.8s ease-in-out;
-    text-decoration: none;
+    opacity: 0;
+    animation: fadeInFooter 2.5s ease-in-out forwards;
 }
 
 .datos a:hover {
@@ -120,127 +133,66 @@ a:hover {
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 50px;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeInFooter 3s ease-in-out forwards;
 }
 
-#primeraColumna {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10%;
-    padding: 20px;
-
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #f5f5f5;
-}
-
-
-#map-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
-
-#map-container iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-}
-
-
-
-@media (max-width: 1024px) {
-    .hero-wrapper {
-        width: 70%;
+/* Animations */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
     }
-
-    #slideshow-container {
-        width: 90%;
-        height: 500px;
-    }
-
-    .slide {
-        padding: 15px;
+    to {
+        opacity: 1;
     }
 }
 
-@media (max-width: 768px) {
-    .hero-wrapper {
-    width: 90%;
-    padding: 10px;
+@keyframes fadeInSlideshow {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
     }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .contact-form {
-        padding: 10px;
-    }
-
-    #slideshow-container {
-        width: 100%;
-        height: 400px;
-        border-width: 1px;
-    }
-
-    .slide {
-        padding: 10px;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-@media (max-width: 480px) {
-    .hero-wrapper {
-        width: 100%;
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
     }
-
-    .hero-content h1 {
-        font-size: 1.5rem;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    #slideshow-container {
-        width: 100%;
-        height: 300px;
-        border-width: 1px;
-        box-shadow: none;
-    }
-
-    .slide {
-        padding: 5px;
-    }
-
-    #primeraColumna {
-        display: none;
-    }
-
-
 }
 
-@keyframes fadeIn {
+@keyframes fadeInHero {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
