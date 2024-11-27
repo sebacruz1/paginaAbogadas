@@ -14,8 +14,24 @@ document.addEventListener('DOMContentLoaded', function () {
             // Initialize functionality after the header is loaded
             initHeader();
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error loading header:', error));
 
+    // Load the footer dynamically
+    fetch('../html/footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error loading footer: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Insert footer into the DOM
+            document.body.insertAdjacentHTML('beforeend', data);
+
+            // Add dynamic year to footer
+            updateFooterYear();
+        })
+        .catch(error => console.error('Error loading footer:', error));
 });
 
 function initHeader() {
@@ -39,6 +55,7 @@ function initHeader() {
         });
     }
 
+    // Dropdown Menu
     if (dropdownToggle && dropdown) {
         const toggleDropdown = (e) => {
             e.stopPropagation();
@@ -51,10 +68,12 @@ function initHeader() {
             const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
             if (isMobile) {
-                dropdownToggle.addEventListener('click', toggleDropdown);
+                // Mobile: Click to toggle
                 dropdownToggle.removeEventListener('mouseover', showDropdown);
                 dropdown.removeEventListener('mouseleave', closeDropdown);
+                dropdownToggle.addEventListener('click', toggleDropdown);
             } else {
+                // Desktop: Hover to toggle
                 dropdownToggle.addEventListener('mouseover', showDropdown);
                 dropdown.addEventListener('mouseleave', closeDropdown);
                 dropdownToggle.removeEventListener('click', toggleDropdown);
@@ -63,9 +82,10 @@ function initHeader() {
 
         const showDropdown = () => dropdown.classList.add('show');
 
+        // Initialize dropdown behavior based on screen size
         adjustDropdownBehavior();
 
-        // Adjust behavior on window resize
+        // Adjust dropdown behavior on window resize
         window.addEventListener('resize', adjustDropdownBehavior);
 
         // Close dropdown when clicking outside
@@ -74,5 +94,13 @@ function initHeader() {
                 closeDropdown();
             }
         });
+    }
+}
+
+function updateFooterYear() {
+    // Locate the span where the year will be displayed
+    const yearSpan = document.querySelector('.year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 }
