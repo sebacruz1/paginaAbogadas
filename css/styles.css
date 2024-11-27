@@ -136,6 +136,12 @@ a:hover {
     animation: fadeInFooter 3s ease-in-out forwards;
 }
 
+#primeraColumna {
+    align-self: center;
+    text-align: center;
+    padding: 20px;
+}
+
 /* Animations */
 @keyframes fadeInPage {
     from {
