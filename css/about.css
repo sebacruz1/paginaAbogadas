@@ -1,0 +1,126 @@
+/* Title Section */
+.title h1 {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 1.2s ease-in-out; /* Fade-in effect for the title */
+}
+
+.title p { 
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 1.4s ease-in-out; /* Slight delay for subtitle effect */
+}
+
+/* Personas Section */
+.personas {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect for personas container */
+}
+
+.personas__container {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-in-out; /* Delayed effect for the main container */
+}
+
+.personas__container--title h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    animation: fadeIn 1.2s ease-in-out; /* Fade-in for the section title */
+}
+
+.personas__container--content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between items */
+}
+
+.personas__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(52, 52, 52);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect for each item */
+}
+
+.personas__item:hover {
+    transform: translateY(-25px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: rgb(72, 72, 72); /* Slightly lighter background on hover */
+}
+
+.personas__item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the circle */
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in-out; /* Fade-in for images */
+}
+
+.personas__item h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #d6d4d4;
+    margin: 10px 0;
+    animation: fadeIn 1.2s ease-in-out; /* Delayed effect for text */
+}
+
+.personas__item p {
+    font-size: 1rem;
+    color: #bab9b9;
+    margin: 5px 0;
+    animation: fadeIn 1.3s ease-in-out; /* Further delay for details */
+}
+
+.personas__item p i {
+    margin-right: 10px;
+    color: #0056b3; /* Icon color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .personas {
+        padding: 30px 10px;
+    }
+
+    .personas__container {
+        max-width: 100%;
+    }
+
+    .personas__item {
+        padding: 15px;
+    }
+
+    .personas__item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .personas__item h2 {
+        font-size: 1.2rem;
+    }
+
+    .personas__item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Initial position slightly below */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}

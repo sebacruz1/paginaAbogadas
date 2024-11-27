@@ -115,11 +115,12 @@
         display: block; /* Show hamburger button */
     }
 
+
     .opciones {
         display: none; /* Hide navigation links by default */
-        flex-direction: column; 
-        background-color: #1a1a1a; 
+        /* flex-direction: column;  */
         position: absolute;
+        background-color: #1a1a1a; 
         top: 100%;
         right: 0;
         width: 100%;
@@ -130,6 +131,8 @@
     }
 
     .opciones.show {
+        flex-direction: column;
+        padding: 20px;
         display: flex; 
         opacity: 1;
         transform: translateY(0);
