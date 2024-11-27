@@ -285,7 +285,11 @@ a:hover {
     }
 
     
-
+    #map-container iframe {
+        width: 80%;
+        height: auto;
+        margin-left: 40px;
+    }
     /* Footer */
     .datos .container {
         flex-direction: column;
