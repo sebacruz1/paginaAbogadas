@@ -1,0 +1,30 @@
+@todo: Cambiar la URL de la página principal y las páginas internas
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.tusitio.com/</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Página interna -->
+  <url>
+    <loc>https://www.tusitio.com/pagina-ejemplo</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Otra página interna -->
+  <url>
+    <loc>https://www.tusitio.com/blog/articulo</loc>
+    <lastmod>2024-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
