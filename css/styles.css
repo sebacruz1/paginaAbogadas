@@ -132,8 +132,9 @@ a:hover {
 #primeraColumna {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     margin-top: 10%;
+    padding: 20px;
+
 }
 
 .menu-toggle {
@@ -178,6 +179,18 @@ a:hover {
     .hero-wrapper {
         width: 70%;
     }
+    #slideshow-container {
+        width: 90%;
+        height: 500px; /* Adjusted height for medium devices */
+    }
+
+    .slide {
+        padding: 15px;
+    }
+
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -198,12 +211,15 @@ a:hover {
         padding: 10px;
     }
 
-    .datos .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
+    #slideshow-container {
+        width: 100%;
+        height: 400px; /* Adjusted height for smaller devices */
+        border-width: 1px; /* Slightly thinner border for smaller screens */
     }
 
+    .slide {
+        padding: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -218,6 +234,22 @@ a:hover {
     .hero-content p {
         font-size: 0.9rem;
     }
+
+    #slideshow-container {
+        width: 100%;
+        height: 300px; /* Further reduced height for very small devices */
+        border-width: 1px;
+        box-shadow: none; /* Remove shadow for simpler visuals */
+    }
+
+    .slide {
+        padding: 5px;
+    }
+
+    #primeraColumna {
+        display: none;
+    }
+    
 
 }
 
