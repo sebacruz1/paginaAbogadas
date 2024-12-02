@@ -1,0 +1,20 @@
+.title {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.text {
+    text-align: center;
+    justify-self: center;
+    margin: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.text ul {
+    text-align: left;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 50px;
+    
+}
