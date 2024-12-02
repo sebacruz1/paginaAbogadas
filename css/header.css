@@ -37,7 +37,7 @@
 }
 
 .header .opciones a:hover {
-    color: #ff5722;
+    color: rgb(82, 114, 160);
 }
 
 /* Mobile menu styles */
@@ -69,7 +69,8 @@
 }
 
 .dropdown-toggle:hover {
-    color: #ff5722; 
+    color: rgb(82, 114, 160);
+    
 }
 
 /* Dropdown menu styles */
