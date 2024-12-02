@@ -15,8 +15,9 @@
 
 /* Logo styles */
 .header .logo img {
-    height: 50px; /* Logo height */
-    width: auto; /* Maintain aspect ratio */
+    height: 80px; /* Logo height */
+    /* width: auto;     */
+
 }
 
 /* Navigation links */

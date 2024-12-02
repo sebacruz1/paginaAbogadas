@@ -33,8 +33,9 @@
 
 .personas__container--content {
     display: flex;
-    flex-direction: column;
-    gap: 60px; /* Space between items */
+    flex-direction: row;
+    gap: 60px; 
+    justify-content: center;
 }
 
 .personas__item {
@@ -92,6 +93,11 @@
 
     .personas__container {
         max-width: 100%;
+    }
+
+    .personas__container--content {
+        flex-direction: column;
+        gap: 40px;
     }
 
     .personas__item {
