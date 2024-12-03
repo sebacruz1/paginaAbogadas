@@ -1,16 +1,13 @@
 
 document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission (no page reload)
-
-    // Collect form data
+    e.preventDefault();
     const formData = new FormData(this);
     const data = {};
     formData.forEach((value, key) => {
-        data[key] = value; // Convert FormData to JSON-like object
+        data[key] = value;
     });
 
-    // Send the data to the backend
-    fetch('http://localhost:3000/submit', {
+    fetch('http://localhost:3000/submit', { // Cambiar por la URL de la API
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
