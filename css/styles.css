@@ -118,7 +118,7 @@ a:hover {
 
 .container-texto {
     display: flex;
-    align-items: center;    
+    align-items: center;
     border-radius: 10px;
     padding: 40px;
     width: 90%;
@@ -146,14 +146,15 @@ a:hover {
 }
 
 .texto h2 {
-    color: #494949;
+    color: #1f1f1f;
     text-align: center;
     /* margin-right: 50px; */
 }
 
 
 
-.container button, .container-texto button { 
+.container button,
+.container-texto button {
     background-color: #0056b3;
     color: white;
     padding: 10px 20px;
@@ -165,7 +166,9 @@ a:hover {
     font-weight: bold;
     transition: background-color 0.3s;
 }
-.container button:hover, .container-texto button:hover {
+
+.container button:hover,
+.container-texto button:hover {
     background-color: #006bdd;
 }
 
@@ -320,6 +323,15 @@ a:hover {
         font-size: 1rem;
     }
 
+    /* Button adjustments */
+    .container button,
+    .container-texto button {
+        padding: 12px 25px;
+        /* Aumentar el padding para un mejor aspecto en pantallas medianas */
+        font-size: 1.1rem;
+        /* Hacer el texto un poco más grande */
+    }
+
     /* Map Section */
     #map-container {
         height: 350px;
@@ -340,7 +352,7 @@ a:hover {
 
     /* Slideshow */
     #slideshow-container {
-        height: 300px;
+        height: 600px;
     }
 
     .slide {
@@ -348,11 +360,9 @@ a:hover {
     }
 
     /* Hero Section */
-
     .hero-wrapper {
         width: 100%;
         padding: 10px;
-
     }
 
     .hero-content h1 {
@@ -363,6 +373,14 @@ a:hover {
         font-size: 0.9rem;
     }
 
+    /* Button adjustments for smaller screens */
+    .container button,
+    .container-texto button {
+        padding: 15px 30px;
+        /* Aumentar un poco el tamaño del botón */
+        font-size: 1.2rem;
+        /* Hacer el texto más grande en pantallas pequeñas */
+    }
 
     #map-container iframe {
         width: 80%;
