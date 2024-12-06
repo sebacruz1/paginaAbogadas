@@ -1,4 +1,8 @@
 /* General Styles */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -7,7 +11,8 @@ body {
     background-color: #1a1a1a;
     color: #f5f5f5;
     overflow-x: hidden;
-    animation: fadeInPage 1s ease-in-out; /* Page-wide fade-in effect */
+    animation: fadeInPage 1s ease-in-out;
+
 }
 
 h1,
@@ -27,11 +32,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 * {
     box-sizing: border-box;
@@ -40,8 +40,8 @@ a:hover {
 /* Slideshow Container */
 #slideshow-container {
     position: relative;
-    width: 1000px;
-    height: 600px;
+    width: 1100px;
+    height: 700px;
     overflow: hidden;
     border: 2px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -90,7 +90,7 @@ a:hover {
     text-align: center;
     width: 80%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
 }
 
@@ -111,7 +111,76 @@ a:hover {
     animation: fadeInText 2.8s ease-in-out forwards;
 }
 
-/* Footer */
+.resumen {
+    background-color: #bebebe;
+}
+
+
+.container-texto {
+    display: flex;
+    align-items: center;    
+    border-radius: 10px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+
+
+.texto {
+    text-align: center;
+    color: #3a3a3a;
+    justify-self: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.texto ul {
+    text-align: left;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 50px;
+
+}
+
+.texto h2 {
+    color: #494949;
+    text-align: center;
+    /* margin-right: 50px; */
+}
+
+
+
+.container button, .container-texto button { 
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.container button:hover, .container-texto button:hover {
+    background-color: #006bdd;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    animation: fadeIn 1.2s ease-in-out;
+
+}
+
+
+
 .datos {
     background: #494949;
     color: #f5f5f5;
@@ -147,6 +216,7 @@ a:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -157,6 +227,7 @@ a:hover {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -168,6 +239,7 @@ a:hover {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -179,6 +251,7 @@ a:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -189,6 +262,7 @@ a:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -199,6 +273,7 @@ a:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -217,8 +292,10 @@ a:hover {
         transform: translateY(0);
     }
 }
+
 /* Media Queries */
 @media (max-width: 768px) {
+
     /* Slideshow */
     #slideshow-container {
         width: 100%;
@@ -260,6 +337,7 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+
     /* Slideshow */
     #slideshow-container {
         height: 300px;
@@ -274,8 +352,9 @@ a:hover {
     .hero-wrapper {
         width: 100%;
         padding: 10px;
-        
+
     }
+
     .hero-content h1 {
         font-size: 1.8rem;
     }
@@ -284,12 +363,13 @@ a:hover {
         font-size: 0.9rem;
     }
 
-    
+
     #map-container iframe {
         width: 80%;
         height: auto;
         margin-left: 40px;
     }
+
     /* Footer */
     .datos .container {
         flex-direction: column;
@@ -300,4 +380,3 @@ a:hover {
         text-align: center;
     }
 }
-
