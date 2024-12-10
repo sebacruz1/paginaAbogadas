@@ -1,8 +1,8 @@
 
 /* Contact Section */
 .contacto {
-    background: #1a1a1a;
-    color: #f5f5f5;
+    background: #c5c5c5;
+    color: #202020;
     padding: 60px 20px;
     text-align: center;
     background-size: cover;
@@ -20,7 +20,7 @@
 .contacto p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
-    color: #e0e0e0;
+    color: #202020;
 }
 
 /* Contact Form */
@@ -28,7 +28,7 @@
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #333333;
+    background-color: #c5c5c5;
     border: 1px solid #444;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
