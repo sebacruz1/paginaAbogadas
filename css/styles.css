@@ -112,7 +112,7 @@ a:hover {
 }
 
 .resumen {
-    background-color: #bebebe;
+    /* background-color: #bebebe; */
 }
 
 
@@ -130,7 +130,7 @@ a:hover {
 
 .texto {
     text-align: center;
-    color: #3a3a3a;
+    /* color: #3a3a3a; */
     justify-self: center;
     font-weight: bolder;
     font-size: 1.2rem;
@@ -146,7 +146,7 @@ a:hover {
 }
 
 .texto h2 {
-    color: #1f1f1f;
+    /* color: #1f1f1f; */
     text-align: center;
     /* margin-right: 50px; */
 }
