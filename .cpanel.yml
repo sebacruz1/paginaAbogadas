@@ -1,4 +1,4 @@
 deployment:
   tasks:
      - export DEPLOYPATH=/home2/cerkwkmy/public_html
-     - /bin/cp -R repositories/paginaAbogadas/assets/img/ /home2/cerkwkmy/public_html
+     - /bin/cp -R repositories/paginaAbogadas/ "/home2/cerkwkmy/public_html
