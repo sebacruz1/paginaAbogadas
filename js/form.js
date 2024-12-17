@@ -1,37 +1,41 @@
-
 document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+    e.preventDefault(); // Prevent default form submission behavior
 
-    fetch('http://localhost:3000/submit', { // Cambiar por la URL de la API
+    // Create a FormData object to collect form input values
+    const formData = new FormData(this);
+
+    // Send the form data to the backend using fetch()
+    fetch('submit.php', { // Change 'submit.php' if hosted on a different path
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        body: formData // Sends data as application/x-www-form-urlencoded
     })
-        .then(response => response.json())
-        .then(result => {
-            if (result.message) {
-                Swal.fire({
-                    title: "El formulario se envio con exito!",
-                    text: "Nos comunicaremos contigo lo mas pronto posible",
-                    icon: "success",
-                  });
-            } else {
-                Swal.fire({
-                    title: "Error al enviar el formulario",
-                    text: "Por favor intenta de nuevo",
-                    icon: "error",
+    .then(response => response.json()) // Parse the JSON response from the server
+    .then(result => {
+        if (result.message) {
+            // Show success message
+            Swal.fire({
+                title: "¡Éxito!",
+                text: result.message,
+                icon: "success"
+            });
+            // Reset the form
+            document.getElementById('contact-form').reset();
+        } else if (result.error) {
+            // Show error message
+            Swal.fire({
+                title: "Error",
+                text: result.error,
+                icon: "error"
             });
         }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error de conexión al enviar el formulario.');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Show connection error
+        Swal.fire({
+            title: "Error de conexión",
+            text: "No se pudo conectar al servidor.",
+            icon: "error"
         });
+    });
 });
