@@ -1,7 +1,7 @@
 async function fetchNews() {
   const title = document.querySelector('.title');
   try {
-    const response = await fetch('http://localhost:3000/news');
+    const response = await fetch('https::/abogadasvregion.cl/news');
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
