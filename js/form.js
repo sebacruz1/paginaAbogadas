@@ -7,7 +7,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         data[key] = value;
     });
 
-    fetch('http://localhost:3000/submit', { // Cambiar por la URL de la API
+    fetch('https://abogadasvregion.cl/submit', { // Cambiar por la URL de la API
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     })
         .then(response => response.json())
         .then(result => {
-            if (result.message) {
+            if (result.trim() === '1') {
                 Swal.fire({
                     title: "El formulario se envio con exito!",
                     text: "Nos comunicaremos contigo lo mas pronto posible",

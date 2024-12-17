@@ -55,11 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->send();
 
             // Success response
-            echo json_encode(['message' => 'El formulario se envió correctamente.']);
+            echo '1';
         } catch (Exception $e) {
             // Error response
             http_response_code(500);
-            echo json_encode(['error' => "Error al enviar el correo: {$mail->ErrorInfo}"]);
+            echo '2';
         }
     } else {
         // Missing field response
