@@ -7,7 +7,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         data[key] = value;
     });
 
-    fetch('https://abogadasvregion.cl/submit', { // Cambiar por la URL de la API
+    fetch('submit.php', { // Cambiar por la URL de la API
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
