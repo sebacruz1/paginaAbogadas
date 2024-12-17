@@ -2,7 +2,7 @@ async function fetchNews() {
   const title = document.querySelector('.title');
   try {
     // Correct PHP endpoint
-    const response = await fetch('http://localhost:8000/news.php');
+    const response = await fetch('https://abogadasvregion.cl/news.php');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
