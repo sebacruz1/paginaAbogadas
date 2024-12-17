@@ -5,72 +5,67 @@
     gap: 20px;
     max-width: 900px;
     margin: 0 auto;
-    animation: fadeIn 1s ease-in-out; /* Fade-in effect for the news container */
+    animation: fadeIn 1s ease-in-out; 
 }
 .title {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
     padding: 20px;
-    animation: fadeIn 1.2s ease-in-out; /* Fade-in effect for the title */
+    animation: fadeIn 1.2s ease-in-out;
+    text-decoration: none;
 }
 
-/* Individual article styling */
 .news-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #1a1a1a;
+    background-color: #3085e0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    animation: fadeIn 1.2s ease-in-out; /* Fade-in effect for each article */
+    animation: fadeIn 1.2s ease-in-out; 
 }
 
-/* Hover effect for each article */
 .news-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #3a3a3a; /* Slightly lighter background on hover */
+    background-color: #3597ff; 
 }
 
-/* Title of the news article */
 .news-item h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     font-family: 'Playfair Display', serif;
     color: #2c3e50;
-    animation: fadeIn 1.3s ease-in-out; /* Fade-in effect for titles */
+    animation: fadeIn 1.3s ease-in-out; 
 }
 
 .news-item h2 a {
     text-decoration: none;
-    color: #3498db;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
 .news-item h2 a:hover {
-    color: #2980b9;
+    color: #ffffff6c;
 }
 
-/* Description of the news article */
 .news-item p {
     font-size: 1rem;
-    color: #7f8c8d;
+    color: #ffffff;
     margin-bottom: 10px;
-    animation: fadeIn 1.4s ease-in-out; /* Fade-in effect for descriptions */
+    animation: fadeIn 1.4s ease-in-out; 
 }
 
-/* Footer with article source info */
 .news-item small {
     font-size: 0.9rem;
-    color: #95a5a6;
+    color: #b7c9ca;
     display: block;
     margin-top: 10px;
 }
 
-/* Responsive Design */
 @media (min-width: 600px) {
     #news-container {
         flex-direction: row;
@@ -79,7 +74,7 @@
     }
 
     .news-item {
-        flex: 1 1 45%; /* Each item takes 45% of the row */
+        flex: 1 1 45%; 
     }
 }
 
@@ -91,19 +86,18 @@
     }
 
     .news-item {
-        flex: 1 1 30%; /* Each item takes 30% of the row */
+        flex: 1 1 30%; 
     }
 }
 
-/* Animation Keyframes */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Initial position slightly below */
+        transform: translateY(20px); 
     }
 
     to {
         opacity: 1;
-        transform: translateY(0); /* Final position */
+        transform: translateY(0); 
     }
 }
