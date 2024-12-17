@@ -1,7 +1,5 @@
-
-
----
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/cerkwkmy/public_html
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R assets/img/ $DEPLOYPATH
+
