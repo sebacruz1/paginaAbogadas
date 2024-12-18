@@ -1,33 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('../html/header.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error loading header: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.body.insertAdjacentHTML('afterbegin', data);
+    // Fetch header and footer simultaneously
+    const headerFetch = fetch('../html/header.html').then(response => {
+        if (!response.ok) throw new Error(`Error loading header: ${response.status}`);
+        return response.text();
+    });
 
+    const footerFetch = fetch('../html/footer.html').then(response => {
+        if (!response.ok) throw new Error(`Error loading footer: ${response.status}`);
+        return response.text();
+    });
+
+    // Use Promise.all to wait for both fetches to complete
+    Promise.all([headerFetch, footerFetch])
+        .then(([headerData, footerData]) => {
+            // Insert header at the beginning of the body
+            document.body.insertAdjacentHTML('afterbegin', headerData);
             initHeader();
-        })
-        .catch(error => console.error('Error loading header:', error));
 
-    fetch('../html/footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error loading footer: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
-
+            // Insert footer at the end of the body
+            document.body.insertAdjacentHTML('beforeend', footerData);
             updateFooterYear();
         })
-        .catch(error => console.error('Error loading footer:', error));
+        .catch(error => console.error('Error loading content:', error));
 });
 
+// Initialize header functionality
 function initHeader() {
     const menuToggle = document.querySelector('.menu-toggle');
     const opciones = document.querySelector('.opciones');
@@ -36,7 +33,7 @@ function initHeader() {
 
     if (menuToggle && opciones) {
         menuToggle.addEventListener('click', function (e) {
-            e.stopPropagation(); 
+            e.stopPropagation();
             opciones.classList.toggle('show');
         });
 
@@ -59,12 +56,10 @@ function initHeader() {
             const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
             if (isMobile) {
-                
                 dropdownToggle.removeEventListener('mouseover', showDropdown);
                 dropdown.removeEventListener('mouseleave', closeDropdown);
                 dropdownToggle.addEventListener('click', toggleDropdown);
             } else {
-                
                 dropdownToggle.addEventListener('mouseover', showDropdown);
                 dropdown.addEventListener('mouseleave', closeDropdown);
                 dropdownToggle.removeEventListener('click', toggleDropdown);
@@ -85,6 +80,7 @@ function initHeader() {
     }
 }
 
+// Update footer year dynamically
 function updateFooterYear() {
     const yearSpan = document.querySelector('.year');
     if (yearSpan) {
