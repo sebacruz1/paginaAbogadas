@@ -145,6 +145,14 @@ a:hover {
     animation: fadeIn 1.2s ease-in-out;
 }
 
+.container-texto { 
+    display: flex;
+    justify-content: center;    
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
 .texto ul {
     text-align-last: left;
     margin: 0 auto;
