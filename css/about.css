@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(52, 52, 52);
+    background-color: #3085e0;
     border-radius: 10px;
     padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@
 .personas__item:hover {
     transform: translateY(-25px); /* Lift effect on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: rgb(72, 72, 72); /* Slightly lighter background on hover */
+    background-color: #4a93e2; /* Slightly lighter background on hover */
 }
 .personas__item img {
     width: 120px;
@@ -69,14 +69,14 @@
 .personas__item h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #d6d4d4;
+    color: #ffffff;
     margin: 10px 0;
     animation: fadeIn 1.2s ease-in-out; /* Delayed effect for text */
 }
 
 .personas__item p {
     font-size: 1rem;
-    color: #bab9b9;
+    color: #ffffff;
     margin: 5px 0;
     animation: fadeIn 1.3s ease-in-out; /* Further delay for details */
 }
