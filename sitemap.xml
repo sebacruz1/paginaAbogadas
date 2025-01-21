@@ -12,27 +12,22 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://abogadasvregion.cl/laboral.html</loc>
+  <loc>https://abogadasvregion.cl/civil</loc>
   <lastmod>2024-12-17T23:10:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abogadasvregion.cl/civil.html</loc>
+  <loc>https://abogadasvregion.cl/penal</loc>
   <lastmod>2024-12-17T23:10:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abogadasvregion.cl/penal.html</loc>
+  <loc>https://abogadasvregion.cl/familia</loc>
   <lastmod>2024-12-17T23:10:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abogadasvregion.cl/familia.html</loc>
-  <lastmod>2024-12-17T23:10:14+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://abogadasvregion.cl/sucesoria.html</loc>
+  <loc>https://abogadasvregion.cl/sucesoria</loc>
   <lastmod>2024-12-17T23:10:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
