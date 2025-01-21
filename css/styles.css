@@ -40,7 +40,7 @@ a:hover {
 #slideshow-container {
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 500px;
     overflow: hidden;
     border: 2px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -53,19 +53,66 @@ a:hover {
     animation: fadeInSlideshow 1.5s ease-in-out forwards;
 }
 
-.slide {
-    position: absolute;
-    width: 100%;
+/* Track Container for Sliding */
+#slideshow-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
     height: 100%;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    width: 100%;
 }
 
-.slide.active {
-    opacity: 1;
-    transform: scale(1);
-    animation: fadeInSlide 1.5s ease-in-out;
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button-slide button {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 200px;
+    height: 50px;
+}
+
+.button-slide button,
+.container-texto button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+
+/* Optional Fade-In Animation */
+@keyframes fadeInSlideshow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -124,38 +171,11 @@ button {
     justify-content: center;
 
 }
-.button-slide button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    width: 200px;
-    height: 50px;
-}
 
 
 
 
-.button-slide button,
-.container-texto button {
-    background-color: #0056b3;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s;
-}
+
 
 .container button:hover,
 .container-texto button:hover {
@@ -208,18 +228,6 @@ button {
 
     to {
         opacity: 1;
-    }
-}
-
-@keyframes fadeInSlideshow {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
