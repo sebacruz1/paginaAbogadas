@@ -34,7 +34,6 @@
     text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .footer__container {
         padding: 10px;
