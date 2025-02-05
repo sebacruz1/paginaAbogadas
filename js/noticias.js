@@ -2,7 +2,7 @@ async function fetchNews() {
   const title = document.querySelector('.title');
   try {
     // Correct PHP endpoint
-    const response = await fetch('https://abogadasvregion.cl/news.php');
+    const response = await fetch('https://eglusabogados.cl/news.php');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
