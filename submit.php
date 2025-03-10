@@ -28,16 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Initialize PHPMailer
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = 'mail.abogadasvregion.cl'; // SMTP host
+            $mail->Host = 'mail.eglusabogados.cl'; // SMTP host
             $mail->SMTPAuth = true;
-            $mail->Username = 'hola@abogadasvregion.cl'; // SMTP username
+            $mail->Username = 'hola@eglusabogados.cl'; // SMTP username
             $mail->Password = $_ENV['EMAIL_PASS']; // SMTP password from .env
             $mail->SMTPSecure = 'ssl'; // Use SSL encryption
             $mail->Port = 465; // Port for SSL
 
             // Email settings
-            $mail->setFrom('hola@abogadasvregion.cl', 'Website Contact Form');
-            $mail->addAddress('hola@abogadasvregion.cl', 'Abogadas V Region'); // Recipient email
+            $mail->setFrom('hola@eglusabogados.cl', 'Website Contact Form');
+            $mail->addAddress('hola@eglusabogados.cl', 'Eglus Abogados'); // Recipient email
             $mail->addReplyTo($email, $nombre); // User-provided reply-to address
 
             // Email content
